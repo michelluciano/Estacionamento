@@ -1,0 +1,854 @@
+{
+	"info": {
+		"_postman_id": "24cfa300-8236-47f2-9bdc-6673aca37a4d",
+		"name": "EstacionamentoCollection",
+		"description": "Essa Colletion foi desenvolvida para realizar os teste no Porjeto de Estacionamento da Everis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "BuscarTodosUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarUsuarioPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuario?nome=Maria%20da%20Silva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Maria%20da%20Silva"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrandoNovoUsuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Matthew Michael Murdock\",\r\n    \"perfil\": \"Caixa\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidaCadastrandoNovoUsuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"\",\r\n    \"perfil\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FormaPagamento",
+			"item": [
+				{
+					"name": "BuscaFormaPagamentoporDescricao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/formapagamento?descricao=Dinheiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamento"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "Dinheiro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarTodasAsFormaPagamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/formapagamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrarNovaFormaPagamento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descricao\": \"Dinheiro\",\r\n  \"status\": \"ATIVA\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/formapagamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidaCadastrarNovaFormaPagamento Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descricao\": \"Dinheiro\",\r\n  \"status\": \"ATIVA\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/formapagamento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"formapagamento"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "BusrcarTodosOsTicket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTicketPorStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ticket?status=EM_ABERTO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "EM_ABERTO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Veiculo",
+			"item": [
+				{
+					"name": "BuscaVeiculoPelaPlaca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo/placa?placaVeiculo=IMP-8126",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"placa"
+							],
+							"query": [
+								{
+									"key": "placaVeiculo",
+									"value": "IMP-8126"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosOsVeiculosPag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo?pagina=0&qtd=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "qtd",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosOsVeiculosPagSortDESC",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gZXN0YWNpb25hbWVudG8iLCJzdWIiOiIyIiwiaWF0IjoxNjA0ODgxMjQxLCJleHAiOjE2MDQ5Njc2NDF9.Q_Z25Im3BsEXY5vG9eeP9QlNM6e7HWfuqBf8oPcZa44",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"funcionario@email.com\",\r\n    \"senha\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo?page=0&size=5&sort=idveiculo,asc&sort=corveiculo,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "idveiculo,asc"
+								},
+								{
+									"key": "sort",
+									"value": "corveiculo,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosOsVeiculosPagSortDESC Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo?page=0&size=3&sort=marcaveiculo,desc&sort=corveiculo,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "marcaveiculo,desc"
+								},
+								{
+									"key": "sort",
+									"value": "corveiculo,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaVeiculosporID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaVeiculosporIDComCategoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo/detalhe/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"detalhe",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarVeiculosporID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\": \"PIM-4578\",\r\n    \"marca\": \"NISSAN\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETAVeiculosporID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/veiculo/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrandoNovoVeiculo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\":\"MKP-4123\",\r\n\t\"marca\":\"Yamaha\",\r\n    \"modelo\":\"YBR 125\",\r\n    \"cor\":\"Verde\",\r\n    \"descricaoCategoria\":\"Motocicleta\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validarCampoCadastrandoNovoVeiculo Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\":\"\",\r\n\t\"marca\":\"Yamaha\",\r\n    \"modelo\":\"YBR 125\",\r\n    \"cor\":\"Vermelha\",\r\n    \"descricaoCategoria\":\"Motocicleta\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "BuscaCategoriaPorDescricao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoria?descricaoCategoria=Motocicleta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							],
+							"query": [
+								{
+									"key": "descricaoCategoria",
+									"value": "Motocicleta"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodasAsCategorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrarNovaCategoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n   \"descricao\": \"Onibus\",\r\n   \"valorhora\": 9.00,\r\n   \"status\": \"ATIVA\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidaCadastrarNovaCategoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n   \"descricao\": \"\",\r\n   \"valorhora\": 2.0,\r\n   \"status\": \"ATIVA\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Autenticacao",
+			"item": [
+				{
+					"name": "authComTokenADMIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@email.com\",\r\n    \"senha\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authComTokenFUNC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"funcionario@email.com\",\r\n    \"senha\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gZXN0YWNpb25hbWVudG8iLCJzdWIiOiIyIiwiaWF0IjoxNjA0ODgwNTUxLCJleHAiOjE2MDQ5NjY5NTF9.8jy-V5d3PRuSQ8BFbxpRP9PNRnL7P9WwWaEeUuGeJbc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gZXN0YWNpb25hbWVudG8iLCJzdWIiOiIxIiwiaWF0IjoxNjA0ODcxNTI4LCJleHAiOjE2MDQ5NTc5Mjh9.Ll9C_W_zvRBGL4DLxyVeM7LuVLtuCT_4RjsZtVJ9VWc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"funcionario@email.com\",\r\n    \"senha\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComTokenADMIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gZXN0YWNpb25hbWVudG8iLCJzdWIiOiIxIiwiaWF0IjoxNjA0ODgwNzA4LCJleHAiOjE2MDQ5NjcxMDh9.1BzGNrC2bAH7a9WV8g16HpLePVvlFxyu8qq3sl8mXDk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUEkgZG8gZXN0YWNpb25hbWVudG8iLCJzdWIiOiIxIiwiaWF0IjoxNjA0ODcxNTI4LCJleHAiOjE2MDQ5NTc5Mjh9.Ll9C_W_zvRBGL4DLxyVeM7LuVLtuCT_4RjsZtVJ9VWc",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@email.com\",\r\n    \"senha\":\"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/veiculo/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"veiculo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
